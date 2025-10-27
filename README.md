@@ -93,13 +93,12 @@ kubectl delete deployment --all            (default namespace)
 kubectl delete deployment alpine-dev -n=development
 
 kubectl delete deployment --all --all-namespaces
-kubectl delete -f nginx-deployment.yaml
 ```
 OR
 
 ```sh
 kubectl delete -f ./deployment.yaml
-kubectl delete deployment nginx-deployment
+kubectl delete deployment <deployment-name>
 kubectl scale deployment <deployment-name> --replicas=0
 ```
 
