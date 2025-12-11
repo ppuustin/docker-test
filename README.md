@@ -105,3 +105,12 @@ kubectl scale deployment <deployment-name> --replicas=0
 - Kustomize - Kubernetes native configuration management https://kustomize.io/
 - Skaffold handles the workflow for building, pushing and deploying your application https://skaffold.dev/
 - Kind is a tool for running local Kubernetes clusters https://kind.sigs.k8s.io/
+
+Docker Desktop in Windows
+
+Docker stopped working in Windows after w11 update claiming something like: "virtual machine platform is not supported".
+It seems that:
+(1) Hyper-V option needs to be selected for Docker (the default WSL option worked previously): 
+Deselect “Use WSL2 instead of Hyper-V” and additionally
+(2) there is a new 'docker-users' group which needs to be defined and oneself added to it.
+Powershell: net localgroup "docker-users" /add "AzureAD\firstname.lastname@domain.com"
